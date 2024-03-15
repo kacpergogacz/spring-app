@@ -1,0 +1,58 @@
+### GET ALL COMPANIES
+GET http://localhost:8083/companies
+
+### GET COMPANY BY ID (NVIDIA)
+GET http://localhost:8083/companies/bcb2f636-2d58-42e2-ac2f-8490d1099435
+
+### GET ALL HARDWARES
+GET http://localhost:8083/hardwares
+
+### GET HARDWARE BY ID (b04aff00-176f-4ab8-978f-e7f201d64603- Monitor LED)
+GET http://localhost:8083/hardwares/6f5ae906-c1c8-4a84-87fa-ccdce97157b3
+
+### ADD NEW HARDWARE
+POST http://localhost:8083/hardwares
+Content-Type: application/json
+
+{
+  "name": "New1",
+  "cost": 25,
+  "companyId": "bcb2f636-2d58-42e2-ac2f-8490d1099435"
+}
+
+###ADD NEW COMPANY
+POST http://localhost:8083/companies
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "NIP": 25.3123123
+}
+
+
+### UPDATE HARDWARE
+PUT http://localhost:8083/hardwares/1fdb0ea4-5e64-48a3-8e97-06e5f71fb9c0
+Content-Type: application/json
+
+{
+  "name": "nowy",
+  "cost": 25,
+  "companyId": "bcb2f636-2d58-42e2-ac2f-8490d1099435"
+}
+
+### UPDATE COMPANY
+PUT http://localhost:8083/companies/bcb2f636-2d58-42e2-ac2f-8490d1099435
+Content-Type: application/json
+
+{
+    "name": "Zaktualizowana",
+    "NIP": 9876543210.132
+
+}
+
+
+### DELETE COMPANY BY ID
+DELETE http://localhost:8083/companies/bcb2f636-2d58-42e2-ac2f-8490d1099435
+
+### DELETE HARDWARE BY ID
+DELETE http://localhost:8083/hardwares/1fdb0ea4-5e64-48a3-8e97-06e5f71fb9c0

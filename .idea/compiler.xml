@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="company-managment-gateway" />
+        <module name="Company" />
+        <module name="Hardware" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="company-managment-frontend" target="18" />
+      <module name="Company-Managment-GateWay" target="18" />
+      <module name="laby2AUI" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Company" options="-parameters" />
+      <module name="Hardware" options="-parameters" />
+      <module name="company-managment-gateway" options="-parameters" />
+      <module name="laby2AUI" options="-parameters" />
+    </option>
+  </component>
+</project>
