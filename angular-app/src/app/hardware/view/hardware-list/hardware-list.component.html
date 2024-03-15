@@ -1,0 +1,32 @@
+<article class="text--justified">
+    <header><h1>Hardwares</h1></header>
+
+    <button [routerLink]="['/hardwares', 'add']" class="add-button">Add new Hardware</button>
+    <table *ngIf="hardwares">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let hardware of hardwares.hardwares" class="hardware-row">
+            <td class="hardware-name">{{hardware.name}}</td>
+<!--            <td class="hardware-name">{{hardware.company | json }}</td>-->
+<!--            <td class="hardware-name">{{hardware.company.companyId}}</td>-->
+            <td>
+                <a [routerLink]="['/hardwares', hardware.hardwareId]" class="action-link">View</a>
+            </td>
+            <td>
+                <a [routerLink]="['/hardwares', hardware.hardwareId, 'edit']" class="action-link">Edit</a>
+            </td>
+            <td>
+                <button (click)="onDelete(hardware)" class="delete-button">Delete</button>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</article>

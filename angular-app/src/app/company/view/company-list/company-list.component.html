@@ -1,0 +1,30 @@
+<article class="text--justified">
+    <header><h2>Companies</h2></header>
+    <button [routerLink]="['/companies', 'add']" class="add-button">Add new Company</button>
+<!--    a jestli istnieje to -->
+    <table *ngIf="companies">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let company of companies.companies" class="company-row">
+            <td class="company-name">{{company.name}}</td>
+            <td>
+                <a [routerLink]="['/companies', company.companyId]" class="action-link">View</a>
+            </td>
+            <td>
+                <a [routerLink]="['/companies', company.companyId, 'edit']" class="action-link">Edit</a>
+            </td>
+            <td>
+                <button (click)="onDelete(company)" class="delete-button">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</article>

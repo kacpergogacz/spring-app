@@ -1,0 +1,28 @@
+<article *ngIf="hardware" class="hardware-card">
+    <header>
+        <h1>{{hardware.name}}</h1>
+    </header>
+
+    <div class="container">
+        <div class="info-row">
+            <div class="label">Company: </div>
+            <div *ngIf="hardware.company">
+                <a [routerLink]="['/companies', hardware.company.companyId]" class="info">{{hardware.company.name}}
+                </a>
+            </div>
+          <div *ngIf="!hardware.company">
+            Not working properly
+          </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label">Cost: {{hardware.cost}}</div>
+        </div>
+        <div class="hardware-actions">
+            <button [routerLink]="['/hardwares', hardware.hardwareId, 'edit']" class="action-link">Edit</button>
+
+            <button (click)="onDelete(hardware)" class="delete-button">Delete</button>
+        </div>
+
+    </div>
+</article>

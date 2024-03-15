@@ -1,0 +1,37 @@
+<article *ngIf="company" class="company-card">
+    <header>
+        <h1>{{ company.name }}</h1>
+    </header>
+
+    <div class="container">
+        <div class="info-row">
+            <div class="label">NIP:</div>
+            <div class="info">{{ company.nip }}</div>
+        </div>
+
+        <div class="label">Hardwares</div>
+        <div *ngIf="company.hardwares">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>View</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let hardware of company.hardwares.hardwares" class="hardware-row">
+                    <td class="hardware-name">{{ hardware.name }}</td>
+                    <td>
+                        <a [routerLink]="['/hardwares', hardware.hardwareId]" class="action-link">View</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="company-actions">
+            <button [routerLink]="['/companies', company.companyId, 'edit']" class="action-link">Edit</button>
+
+            <button (click)="onDelete(company)" class="delete-button">Delete</button>
+        </div>
+    </div>
+</article>
